@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conhecimento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #header {
+            background-color: #8B0000; /* Bordô */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px; /* Borda arredondada */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+        }
+
+        #header a {
+            color: #fff; /* Cor branca para os links */
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold; /* Texto em negrito */
+        }
+
+        #header a:hover {
+            color: #ccc; /* Cor ao passar o mouse */
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        p {
+            text-align: center; /* Centraliza o parágrafo */
+            margin-bottom: 20px; /* Espaço abaixo do parágrafo */
+        }
+
+        fieldset {
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px solid #ccc;
+            border-radius: 10px; /* Borda arredondada */
+            background-color: #fff; /* Fundo branco */
+        }
+
+        .video-container {
+            position: relative;
+            width: 80%; /* Ajusta a largura do vídeo */
+            max-width: 640px; /* Largura máxima do vídeo */
+            margin: 20px auto; /* Centraliza o vídeo */
+            overflow: hidden;
+            height: 360px; /* Altura fixa para o vídeo */
+            border: 2px solid #8B0000; /* Bordô */
+            border-radius: 10px; /* Borda arredondada */
+            display: flex; /* Alinhamento flexível */
+            justify-content: center; /* Centraliza o conteúdo */
+            align-items: center; /* Centraliza verticalmente */
+            background-color: #f8f8f8; /* Fundo claro para a mensagem */
+            font-weight: bold; /* Negrito */
+            color: #8B0000; /* Bordô */
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        select {
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #8B0000; /* Bordô */
+            border-radius: 5px; /* Borda arredondada */
+            width: 100%; /* Largura total */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+        }
+
+        h2 {
+            text-align: center; /* Centraliza o título */
+            color: #8B0000; /* Bordô */
+        }
+
+        .resource-list {
+            background-color: #fff; /* Fundo branco */
+            border-radius: 10px; /* Borda arredondada */
+            padding: 20px; /* Espaçamento interno */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+            margin: 20px auto; /* Centraliza a lista */
+            max-width: 600px; /* Largura máxima da lista */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        a {
+            color: #8B0000; /* Bordô para links na lista */
+            text-decoration: none; /* Remove sublinhado */
+            font-weight: bold; /* Negrito */
+            transition: color 0.3s; /* Transição suave na cor */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Sublinha ao passar o mouse */
+            color: #A52A2A; /* Cor marrom ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Conhecimento</h1>
+        <a href="index.html">Home</a>
+        <a href="index2.html">Currículo</a>
+    </div>
+
+    <h1>Bem-vindo à Página de conhecimento!</h1>
+    
+    <p>Aqui você encontrará informações sobre diversas temáticas que podem ser úteis para o seu aprendizado e desenvolvimento. Explore as seções abaixo!</p>
+
+    <fieldset>
+        <legend>Selecione seu tema de interesse:</legend>
+        <select id="theme-select" onchange="updateVideo()">
+            <option value="">Escolha um tema</option>
+            <option value="tecnologia">Tecnologia</option>
+            <option value="inovacao">Inovação</option>
+            <option value="design">Design</option>
+            <option value="negocios">Negócios</option>
+        </select>
+    </fieldset>
+
+    <hr>
+
+    <h2>Vídeo Educacional</h2>
+    <div class="video-container" id="video-container">
+        <span id="video-message">Selecione um tema para assistir aos vídeos</span>
+        <iframe id="video-frame" src="" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen style="display: none;"></iframe>
+    </div>
+
+    <hr>
+
+    <div class="resource-list">
+        <h2>Lista de Recursos</h2>
+        <p>Confira alguns recursos úteis:</p>
+        <ul>
+            <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a> - Aprenda web development</li>
+            <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a> - Documentação da Mozilla</li>
+            <li><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a> - Comunidade de desenvolvedores</li>
+        </ul>
+    </div>
+
+    <script>
+        function updateVideo() {
+            const select = document.getElementById('theme-select');
+            const videoFrame = document.getElementById('video-frame');
+            const videoContainer = document.getElementById('video-container');
+            const videoMessage = document.getElementById('video-message');
+            const selectedValue = select.value;
+
+            switch (selectedValue) {
+                case 'tecnologia':
+                    videoFrame.src = 'https://www.youtube.com/embed/NA8pdCKxkNc'; // Exemplo de vídeo sobre tecnologia
+                    break;
+                case 'inovacao':
+                    videoFrame.src = 'https://www.youtube.com/embed/jXS3uz77qfI'; // Exemplo de vídeo sobre inovação
+                    break;
+                case 'design':
+                    videoFrame.src = 'https://www.youtube.com/embed/39y99yr6ZVE'; // Exemplo de vídeo sobre design
+                    break;
+                case 'negocios':
+                    videoFrame.src = 'https://www.youtube.com/embed/O2WNOId3q94'; // Exemplo de vídeo sobre negócios
+                    break;
+                default:
+                    videoFrame.src = ''; // Limpa o vídeo se nenhum tema for selecionado
+                    videoMessage.style.display = 'block'; // Mostra a mensagem
+                    videoFrame.style.display = 'none'; // Esconde o iframe
+                    return; // Sai da função
+            }
+
+            videoMessage.style.display = 'none'; // Esconde a mensagem
+            videoFrame.style.display = 'block'; // Mostra o iframe
+        }
+    </script>
+</body>
+</html>

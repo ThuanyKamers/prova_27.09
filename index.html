@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* Estilos para o cabeçalho */
+    header {
+        text-align: center;
+        background-color: #ccc;
+        color: white;
+        padding: 20px;
+    }
+
+    header img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Estilos para o título */
+    header h1 {
+        margin: 20px 0;
+        color: #003366;
+    }
+
+    /* Estilos para o texto principal */
+    main {
+        padding: 20px;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    /* Estilos para a navegação */
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 30px; /* Mais espaçamento entre os quadrados */
+    }
+
+    nav ul li {
+        width: 180px; /* Definindo tamanho maior do quadrado */
+        height: 200px;
+        border: 2px solid #ccc; /* Borda mais suave */
+        border-radius: 10px; /* Bordas arredondadas para suavizar */
+        background-color: #f9f9f9; /* Fundo claro e sutil */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul li:hover {
+        transform: translateY(-5px); /* Efeito de hover com elevação */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        margin-top: 10px; /* Espaço entre a imagem e o texto */
+        font-size: 16px; /* Tamanho de fonte ajustado */
+    }
+
+    nav ul li a:hover {
+        color: #007BFF;
+    }
+
+    /* Estilos para a imagem no quadrado */
+    nav ul li img {
+        max-width: 100%; /* Ajusta a imagem para ocupar toda a largura possível */
+        max-height: 100px; /* Limita a altura máxima para 100px */
+        object-fit: contain; /* Mantém a proporção da imagem sem distorcer */
+        margin-bottom: 10px; /* Espaço entre a imagem e o texto */
+    }
+
+    header img {
+        width: 100%; /* Ocupará toda a largura do cabeçalho */
+        max-width: 800px; /* Defina um limite de largura máximo */
+        height: auto; /* Mantém a proporção da imagem */
+        object-fit: cover; /* Ajusta a imagem para preencher o espaço de forma mais equilibrada */
+    }
+</style>
+<body>
+    <header>
+        <img src="fmp.png" alt="Imagem do cabeçalho">
+        <h1>Bem-vindo ao Mundo do HTML</h1>
+    </header>
+
+    <main>
+        <p>HTML (HyperText Markup Language) é a linguagem padrão para criar páginas web. Com o HTML, você pode criar conteúdo estruturado como cabeçalhos, parágrafos, links, imagens, e muito mais. Ele é a espinha dorsal de qualquer página da web e trabalha junto com CSS e JavaScript para proporcionar layouts e funcionalidades dinâmicas. Experimente passar o mouse pelos quadrados abaixo.</p>
+    </main>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="index2.html">
+                    <img src="curriculo.png" alt="Imagem de Currículo"> <!-- Imagem para o currículo -->
+                    Currículo
+                </a>
+            </li>
+            <li>
+                <a href="index3.html">
+                    <img src="conhecimento.png" alt="Imagem para Página 3"> <!-- Imagem para a página 3 -->
+                    Conhecimento
+                </a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
